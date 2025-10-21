@@ -20,7 +20,8 @@ COPY music_server.py requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port the app runs on
-EXPOSE 5005
+EXPOSE 10000
 
 # Command to run the application
 CMD ["python", "music_server.py"]
+
