@@ -7,7 +7,7 @@ import yt_dlp
 import hashlib
 import os
 import json
-
+import shutil
 # ---------- CONFIG ----------
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY", "test_key")
 CACHE_DIR = "music_cache"
@@ -283,6 +283,7 @@ async function searchMusic() {
 # ---------- MAIN ----------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000, threaded=True, debug=True)
+
 
 
 
