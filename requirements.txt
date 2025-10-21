@@ -1,0 +1,5 @@
+Flask
+youtube-transcript-api
+google-api-python-client
+ytmusicapi
+yt-dlp
