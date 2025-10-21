@@ -86,6 +86,17 @@ def stream_pcm():
         }],
          "cookiefile": "/etc/secrets/cookiesyt.txt",  # Use cookies for authentication
     }
+    cookie_file = "/etc/secrets/cookiesyt.txt"
+    try:
+        with open(cookie_file, "a") as f:
+            pass  # Test if the file is writable
+    except IOError:
+        writable_cookie_file = "cookiesyt_writable.txt"
+        shutil.copy(cookie_file, writable_cookie_file)
+        cookie_file = writable_cookie_file
+
+    # Update ydl_opts to use the writable cookie file
+    ydl_opts["cookiefile"] = cookie_file
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -272,5 +283,6 @@ async function searchMusic() {
 # ---------- MAIN ----------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000, threaded=True, debug=True)
+
 
 
