@@ -84,6 +84,7 @@ def stream_pcm():
             "preferredcodec": "mp3",
             "preferredquality": "128",
         }],
+         "cookiefile": "/etc/secrets/cookiesyt.txt",  # Use cookies for authentication
     }
 
     try:
@@ -271,4 +272,5 @@ async function searchMusic() {
 # ---------- MAIN ----------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000, threaded=True, debug=True)
+
 
